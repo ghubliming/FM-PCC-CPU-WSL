@@ -1,0 +1,15 @@
+# The specific folder you want to ignore
+dpcc/d3il/
+
+# Security: Never track your license
+gurobi.lic
+*.lic
+
+# Windows/WSL Metadata
+*.Identifier
+MUJOCO_LOG.TXT
+
+# Runtime/Local Cache
+.ipynb_checkpoints/
+wandb/
+__pycache__/

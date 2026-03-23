@@ -48,7 +48,7 @@ def load_losses(*loadpath):
         # print(f'[ utils/serialization ] File {loadpath} does not exist')
         return None
 
-def load_diffusion(*loadpath, epoch='latest', device='cuda:0', seed=None):
+def load_diffusion(*loadpath, epoch='latest', device=None, seed=None):
     print(f'\n[ utils/serialization ] Loading model from {os.path.join(*loadpath)}\n')
 
     dataset_config = load_config(*loadpath, 'dataset_config.pkl')
@@ -56,6 +56,9 @@ def load_diffusion(*loadpath, epoch='latest', device='cuda:0', seed=None):
     diffusion_config = load_config(*loadpath, 'diffusion_config.pkl')
     trainer_config = load_config(*loadpath, 'trainer_config.pkl')
 
+    ## Override pickled device with the requested device
+    model_config._device = device
+    diffusion_config._device = device
     trainer_config._dict['results_folder'] = os.path.join(*loadpath)
 
     dataset = dataset_config()

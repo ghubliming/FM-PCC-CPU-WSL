@@ -45,7 +45,7 @@ class Policy:
         conditions = self._format_conditions(conditions, batch_size)
 
         test_ret = test_ret if test_ret is not None else self.test_ret
-        returns = to_device(test_ret * torch.ones(batch_size, 1), 'cuda')
+        returns = to_device(test_ret * torch.ones(batch_size, 1), self.device)
 
         # Use GaussianDiffusion model with DDPM
         projector = self.projector if not disable_projection else None

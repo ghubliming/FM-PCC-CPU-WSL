@@ -57,7 +57,8 @@ class Trainer(object):
 
         self.step_start_ema = step_start_ema
         self.log_freq = log_freq
-        self.save_freq = n_train_steps // 5
+        #self.save_freq = n_train_steps // 5
+        self.save_freq = max(1, n_train_steps // 5)
 
         self.n_train_steps = n_train_steps
         self.n_steps_per_epoch = n_steps_per_epoch

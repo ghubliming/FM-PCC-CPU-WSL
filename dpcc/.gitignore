@@ -1,6 +1,6 @@
 args.json
 .vscode/
-logs/*
+#logs/*
 d3il/*
 d4rl-minari-dataset-generation_bkup/*
 diffuser.egg-info/*

@@ -56,10 +56,15 @@ def load_diffusion(*loadpath, epoch='latest', device=None, seed=None):
     diffusion_config = load_config(*loadpath, 'diffusion_config.pkl')
     trainer_config = load_config(*loadpath, 'trainer_config.pkl')
 
-    ## Override pickled device with the requested device
-    model_config._device = device
-    diffusion_config._device = device
+    if hasattr(model_config, '_device'):
+        model_config._device = device
+    if hasattr(diffusion_config, '_device'):
+        diffusion_config._device = device
+    if hasattr(trainer_config, '_device'):
+        trainer_config._device = None
+
     trainer_config._dict['results_folder'] = os.path.join(*loadpath)
+    trainer_config._dict['train_device'] = device
 
     dataset = dataset_config()
     model = model_config().to(device)

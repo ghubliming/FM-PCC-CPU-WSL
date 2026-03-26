@@ -13,3 +13,11 @@ MUJOCO_LOG.TXT
 .ipynb_checkpoints/
 wandb/
 __pycache__/
+
+# Logs: ignore everything by default (no trailing slash = negation can override)
+dpcc/logs
+
+# Exception: track the plans subfolder only
+!dpcc/logs/avoiding-d3il/
+!dpcc/logs/avoiding-d3il/plans/
+!dpcc/logs/avoiding-d3il/plans/**

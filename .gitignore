@@ -1,5 +1,6 @@
 # The specific folder you want to ignore
-dpcc/d3il/
+dpcc/d3il_old
+dpcc/d3il/environments/dataset/
 
 # Security: Never track your license
 gurobi.lic

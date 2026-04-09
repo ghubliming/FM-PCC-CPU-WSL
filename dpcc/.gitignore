@@ -1,7 +1,10 @@
 args.json
 .vscode/
 #logs/*
-d3il/*
+#d3il/*
+d3il_old
+d3il/environments/dataset/
+
 d4rl-minari-dataset-generation_bkup/*
 diffuser.egg-info/*
 __pycache__/

@@ -1,0 +1,11 @@
+setup.py
+gym_avoiding/__init__.py
+gym_avoiding.egg-info/PKG-INFO
+gym_avoiding.egg-info/SOURCES.txt
+gym_avoiding.egg-info/dependency_links.txt
+gym_avoiding.egg-info/requires.txt
+gym_avoiding.egg-info/top_level.txt
+gym_avoiding/envs/__init__.py
+gym_avoiding/envs/avoiding.py
+gym_avoiding/envs/objects/__init__.py
+gym_avoiding/envs/objects/avoiding_objects.py

@@ -1,11 +1,11 @@
 {
   "seed": 0,
-  "n_trials": 50,
-  "batch_size": 128,
-  "state_dim": 8,
+  "n_trials": 20,
+  "batch_size": 1024,
+  "state_dim": 64,
   "t0": 0.0,
   "t1": 1.0,
-  "steps": 20,
+  "steps": 50,
   "rtol": 1e-05,
   "atol": 1e-06,
   "solvers": [
@@ -15,15 +15,15 @@
     },
     {
       "backend": "torchdiffeq",
-      "method": "dopri5"
-    },
-    {
-      "backend": "torchdiffeq",
-      "method": "rk4"
+      "method": "euler"
     },
     {
       "backend": "torchdiffeq",
       "method": "midpoint"
+    },
+    {
+      "backend": "torchdiffeq",
+      "method": "rk4"
     }
   ]
 }
